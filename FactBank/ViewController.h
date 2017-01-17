@@ -10,6 +10,9 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *label;
+
+- (IBAction)randomButton:(id)sender;
 
 @end
 

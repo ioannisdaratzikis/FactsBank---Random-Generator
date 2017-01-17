@@ -17,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [self.label.layer setCornerRadius:20.0];
+    self.label.clipsToBounds = YES;
 }
 
 
@@ -25,5 +28,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (IBAction)randomButton:(id)sender {
+    
+    NSArray *facts = @[@"Banging your head against a wall burns 150 calories an hour",@"In the UK, it is illegal to eat mince pies on Christmas Day!", @"Pteronophobia is the fear of being tickled by feathers!", @"When hippos are upset, their sweat turns red.", @"A flock of crows is known as a murder", @"Cherophobia is the fear of fun"];
+    int randomWord = arc4random() % facts.count;
+    
+    self.label.text = facts[randomWord];
+    
+}
 
 @end
